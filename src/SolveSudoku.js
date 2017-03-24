@@ -5,6 +5,7 @@ class SolveSudoku {
 	constructor(grid) {
 		this.grid = grid;
 		this.startTime = new Date();
+		this.recursions = 0;
 		this.init();
 	}
 	init() {
@@ -12,8 +13,10 @@ class SolveSudoku {
 		this.solveCell(cell);
 	}
 	solveCell(cell) {
+		this.recursions++;
 		if (cell == null) {
 			this.print();
+			console.log(`Recursions: ${this.recursions}`);
 			let timeNow = new Date();
 			let timeElasped = timeNow - this.startTime;
 			console.log(`Time: ${timeElasped}ms`);
