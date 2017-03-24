@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const   expect = require('chai').expect,
-		SolveSudoku = require('../src/SolveSudoku');
+		SolveSudoku = require('../src/SolveSudoku'),
+		Unique = require('../src/Unique'),
+		unique = new Unique();
 
 
 const testGrid = [
@@ -27,6 +29,18 @@ const solutionGrid = [
 	['1', '8', '3', '9', '2', '6', '7', '5', '4']
 ];
 describe('Sudoku Solver', function() {
+	describe('Unique', function() {
+		describe('uniqueness', function() {
+			it('5 should be unique', function() {
+				const check = unique.check(testGrid, 0, 0, 5);
+				expect(check).to.be.false;
+			});
+			it('7 should not be unique', function() {
+				const check = unique.check(testGrid, 0, 0, 7);
+				expect(check).to.be.true;
+			});
+		});
+	});
 	describe('SolveSudoku', function() {
 		it('should solve the grid', function() {
 			var solution = new SolveSudoku(testGrid);
