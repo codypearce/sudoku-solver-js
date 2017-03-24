@@ -1,4 +1,5 @@
 # Solving Sudoku
+[![Build Status](https://travis-ci.org/codypearce/sudoku-solver-js.svg?branch=master)](https://travis-ci.org/codypearce/sudoku-solver-js)
 
 Sudoku solver built in ES6 and Node.js to solve a set of sudoku puzzles. The puzzles and the requirements for the solver can be found in the puzzle's folder, the solutions are in the solutions folder.
 
