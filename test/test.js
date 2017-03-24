@@ -30,7 +30,37 @@ const solutionGrid = [
 ];
 describe('Sudoku Solver', function() {
 	describe('Unique', function() {
-		describe('uniqueness', function() {
+		describe('row uniqueness', function() {
+			it('2 should be unique', function() {
+				const check = unique.checkRow(testGrid, 1, 2, 2);
+				expect(check).to.be.false;
+			});
+			it('8 should not be unique', function() {
+				const check = unique.checkRow(testGrid, 4, 2, 8);
+				expect(check).to.be.true;
+			});
+		});
+		describe('column uniqueness', function() {
+			it('4 should be unique', function() {
+				const check = unique.checkColumn(testGrid, 2, 2, 4);
+				expect(check).to.be.false;
+			});
+			it('9 should not be unique', function() {
+				const check = unique.checkColumn(testGrid, 4, 6, 9);
+				expect(check).to.be.true;
+			});
+		});
+		describe('box uniqueness', function() {
+			it('6 should be unique', function() {
+				const check = unique.checkBox(testGrid, 0, 0, 6);
+				expect(check).to.be.false;
+			});
+			it('1 should not be unique', function() {
+				const check = unique.checkBox(testGrid, 0, 0, 1);
+				expect(check).to.be.true;
+			});
+		});
+		describe('overall uniqueness', function() {
 			it('5 should be unique', function() {
 				const check = unique.check(testGrid, 0, 0, 5);
 				expect(check).to.be.false;
