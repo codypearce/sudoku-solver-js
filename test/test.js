@@ -75,17 +75,17 @@ describe('Sudoku Solver', function() {
 		
 		describe('nextCell', function() {
 			it('should go to next row', function() {
-				var solution = new SolveSudoku(testGrid);
+				const solution = new SolveSudoku(testGrid);
 				expect(solution.nextCell(2,8).toString()).to.equal([3,0].toString());
 			});
 			it('should go to next column', function() {
-				var solution = new SolveSudoku(testGrid);
+				const solution = new SolveSudoku(testGrid);
 				expect(solution.nextCell(5,3).toString()).to.equal([5,4].toString());
 			});
 		});
 		describe('Solve Grid', function() {
 			it('should solve the grid', function() {
-				var solution = new SolveSudoku(testGrid);
+				const solution = new SolveSudoku(testGrid);
 				expect(solution.grid.toString()).to.equal(solutionGrid.toString());
 			});
 		});
