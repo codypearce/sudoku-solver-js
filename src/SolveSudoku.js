@@ -4,11 +4,10 @@ const 	Unique = require('./Unique'),
 class SolveSudoku {
 	constructor(grid) {
 		this.grid = grid;
+	}
+	solve() {
 		this.startTime = new Date();
 		this.recursions = 0;
-		this.init();
-	}
-	init() {
 		const cell = [0, 0];
 		this.solveCell(cell);
 	}
