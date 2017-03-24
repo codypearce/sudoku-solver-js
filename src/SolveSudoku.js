@@ -62,7 +62,7 @@ class SolveSudoku {
 			}
 			gridDisplay += '\n';
 		}
-		console.log(gridDisplay);
+		return gridDisplay;
 	}
 }
 

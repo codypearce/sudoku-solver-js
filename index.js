@@ -10,9 +10,11 @@ if (args.length < 1) {
 }
 
 // Get first input and open stream to read file
-var inputFilename = args[0];
+const inputFilename = args[0];
+const outputFilename = `./solutions/${inputFilename.slice(0,-3)}sln.txt`;
+
 const rl = readline.createInterface({
-	input: fs.createReadStream(`./puzzles/${inputFilename}`)
+	input: fs.createReadStream(`./puzzles/${inputFilename}`),
 });
 
 let grid = [];
@@ -21,4 +23,14 @@ let grid = [];
 rl.on('line', (line) => grid.push(line.split(''))); 
 
 // When finished reading the file, solve the grid 
-rl.on('close', () => new SolveSudoku(grid));
+rl.on('close', function() {
+	var solution = new SolveSudoku(grid);
+	var display = solution.print();
+	fs.writeFile(outputFilename, display, function(err) {
+		if (err) {
+			throw err;
+		}
+		console.log(display);
+		console.log(`Results were saved to: ${outputFilename}`);
+   });
+});
