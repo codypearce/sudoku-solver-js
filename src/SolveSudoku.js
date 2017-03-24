@@ -27,6 +27,7 @@ class SolveSudoku {
 				}		
 			}		
 		}
+	}
 	solveCell(cell) {
 		this.recursions++;
 		if (cell == null) {
