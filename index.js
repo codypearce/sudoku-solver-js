@@ -24,8 +24,9 @@ rl.on('line', (line) => grid.push(line.split('')));
 
 // When finished reading the file, solve the grid 
 rl.on('close', function() {
-	const solution = new SolveSudoku(grid);
-	const display = solution.print();
+	const solver = new SolveSudoku(grid);
+	solver.solve();
+	const display = solver.print();
 	fs.writeFile(outputFilename, display, function(err) {
 		if (err) {
 			throw err;
