@@ -11,13 +11,17 @@ class SolveSudoku {
 		this.solveCell(cell);
 	}
 	solveCell(cell) {
+		if (cell == null) {
+			console.log(this.grid);
+			return true;
+		}
 		const row = cell[0];
 		const column = cell[1];
 		
 		// If cell already has a number go to next cell
 		if(this.grid[row][column] != 'X') {
-            return this.solveCell(this.nextCell(row, column));
-        }
+			return this.solveCell(this.nextCell(row, column));
+		}
 		
 		for(let num = 1; num <= 9; num++) {
 			// If number is not unique in row, column, and box, then try next number
