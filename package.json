@@ -4,7 +4,8 @@
   "description": "Sudoku Solver in Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gulp lint"
   },
   "author": "Cody Pearce",
   "license": "ISC",
