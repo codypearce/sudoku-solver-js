@@ -29,8 +29,8 @@ const grid = [
   ['X', 'X', 'X', '7', '4', '3', 'X', 'X', 'X']...
   ...
 ]
-const solution = new SolveSudoku(grid);
-const display = solution.print();
+const solver = new SolveSudoku(grid);
+solver.solve();
 console.log(display);
 ```
 
