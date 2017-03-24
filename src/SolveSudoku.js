@@ -1,3 +1,6 @@
+const Unique = require('./Unique'),
+    unique = new Unique();
+
 class SolveSudoku {
     constructor(grid) {
         this.grid = grid;
@@ -13,7 +16,7 @@ class SolveSudoku {
         
         for(let num = 1; num <= 9; num++) {
             // If number is not unique in row, column, and box, then try next number
-            if(!this.check(row, column, num)) {
+            if(unique.check(this.grid, row, column, num)) {
                 continue;
             } else {
                 // Else try number in that cell
@@ -41,9 +44,6 @@ class SolveSudoku {
             column++;
         }
         return [row, column];
-    }
-    check() {
-        
     }
 }
 
