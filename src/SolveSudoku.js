@@ -27,6 +27,9 @@ class SolveSudoku {
 				}		
 			}		
 		}
+		// If solvable, start at 0, 0 cell
+		const cell = [0, 0];
+		this.solveCell(cell);
 	}
 	solveCell(cell) {
 		this.recursions++;
