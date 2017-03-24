@@ -4,13 +4,16 @@
   "description": "Sudoku Solver in Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "lint": "gulp lint"
   },
   "author": "Cody Pearce",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.5.0",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1"
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^4.1.0",
+    "mocha": "^3.2.0"
   }
 }
