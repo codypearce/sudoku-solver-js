@@ -4,7 +4,7 @@
   "description": "Sudoku Solver in Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha test",
     "lint": "gulp lint"
   },
   "author": "Cody Pearce",

@@ -1,12 +1,37 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const   expect = require('chai').expect,
-		Index = require('../index.js');
-		
+		SolveSudoku = require('../src/SolveSudoku');
+
+
+const testGrid = [
+	['X', 'X', 'X', '7', '4', '3', 'X', 'X', 'X'],
+	['X', 'X', '9', 'X', 'X', 'X', '6', 'X', 'X'],
+	['X', '1', '8', 'X', 'X', 'X', '4', '3', 'X'],
+	['6', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '2'],
+	['8', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '1'],
+	['X', '4', '1', '2', 'X', '9', '5', '7', 'X'],
+	['X', 'X', 'X', '5', 'X', '1', 'X', 'X', 'X'],
+	['X', 'X', '5', 'X', 'X', 'X', '9', 'X', 'X'],
+	['X', 'X', '3', '9', '2', '6', '7', 'X', 'X']
+];
+const solutionGrid = [
+	['5', '2', '6', '7', '4', '3', '1', '8', '9'],
+	['4', '3', '9', '1', '5', '8', '6', '2', '7'],
+	['7', '1', '8', '6', '9', '2', '4', '3', '5'],
+	['6', '9', '7', '3', '1', '5', '8', '4', '2'],
+	['8', '5', '2', '4', '6', '7', '3', '9', '1'],
+	['3', '4', '1', '2', '8', '9', '5', '7', '6'],
+	['9', '7', '4', '5', '3', '1', '2', '6', '8'],
+	['2', '6', '5', '8', '7', '4', '9', '1', '3'],
+	['1', '8', '3', '9', '2', '6', '7', '5', '4']
+];
 describe('Sudoku Solver', function() {
-	describe('Test', function() {
-		it('should pass', function() {
-			expect(1).to.equal(1);
+	describe('SolveSudoku', function() {
+		it('should solve the grid', function() {
+			var solution = new SolveSudoku(testGrid);
+			expect(solution.grid.toString()).to.equal(solutionGrid.toString());
 		});
 	});
+	
 });
