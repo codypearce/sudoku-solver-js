@@ -1,6 +1,4 @@
-class Unique {
-	constructor(){}
-	
+class Unique {	
 	check(grid, row, column, num) {
 		// check for uniqueness in row, column, and box, return true if not unique
 		return this.checkRow(grid, row, column, num) || this.checkColumn(grid, row, column, num) || this.checkBox(grid, row, column, num);
