@@ -19,3 +19,22 @@ node index.js puzzle.txt
 ```
 
 You'll need to put the puzzle in the puzzle folder and name it something unique. The solution, as well as the time it took to solve, will display in the console. Additionally, a file named '${yourfilename}.sln.txt', will appear in the solutions folder.
+
+You can also import the SolveSudoku class and pass it in the grid you want to solve. You'll need to format the grid as a two dimensional array, with the blank spots filled in with 'X'.
+
+```javascript
+import SolveSudoku from '${yourpath}/sudoku-solver-js/src/SolveSudoku';
+const grid = [
+  ['X', 'X', 'X', '7', '4', '3', 'X', 'X', 'X']...
+  ...
+]
+const solution = new SolveSudoku(grid);
+const display = solution.print();
+console.log(display);
+```
+
+## Testing
+Tests are written in mocha and chai. You can run the tests by running gulp or gulp test.
+```
+gulp test
+```
