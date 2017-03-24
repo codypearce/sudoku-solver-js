@@ -8,9 +8,25 @@ class SolveSudoku {
 	solve() {
 		this.startTime = new Date();
 		this.recursions = 0;
-		const cell = [0, 0];
-		this.solveCell(cell);
+		this.isSolvable();
 	}
+	isSolvable() {
+		for(let row = 0; row < 9; row++) {
+			for(let column = 0; column < 9; column++) {	
+				// only check numbers that are on the grid
+				if(this.grid[row][column] == 'X') {
+					continue;
+				}
+				
+				// if it is not unique then grid is unsolvable
+				if(unique.check(this.grid, row, column, this.grid[row][column])) {
+					console.log('Given Sudoku Grid is unsolvable!');
+					process.exit(1);
+				} else {
+					continue;
+				}		
+			}		
+		}
 	solveCell(cell) {
 		this.recursions++;
 		if (cell == null) {
