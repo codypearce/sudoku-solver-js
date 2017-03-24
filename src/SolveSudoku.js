@@ -4,6 +4,7 @@ const 	Unique = require('./Unique'),
 class SolveSudoku {
 	constructor(grid) {
 		this.grid = grid;
+		this.startTime = new Date();
 		this.init();
 	}
 	init() {
@@ -13,6 +14,9 @@ class SolveSudoku {
 	solveCell(cell) {
 		if (cell == null) {
 			this.print();
+			let timeNow = new Date();
+			let timeElasped = timeNow - this.startTime;
+			console.log(`Time: ${timeElasped}ms`);
 			return true;
 		}
 		const row = cell[0];
